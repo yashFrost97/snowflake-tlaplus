@@ -1,0 +1,586 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.14 of 10 July 2019
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 53 and seed -3129368295694136023 with 6 workers on 12 cores with 1200MB heap and 2699MB offheap memory [pid: 4720] (Windows 10 10.0 amd64, AdoptOpenJDK 11.0.3 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file D:\TLA+\toolbox\snowflake_atomic\snowflake_atomic.toolbox\Model_1\MC.tla
+Parsing file D:\TLA+\toolbox\snowflake_atomic\snowflake_atomic.toolbox\Model_1\snowflake_atomic.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\TLC.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\Sequences.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\Integers.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\Naturals.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module Integers
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module snowflake_atomic
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2020-05-22 01:02:08)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 2 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2020-05-22 01:02:09.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(20) at 2020-05-22 01:02:10: 8,938 states generated, 2,299 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking 2 branches of temporal properties for the complete state space with 4598 total distinct states at (2020-05-22 01:02:10)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2116:1 @!@!@
+Temporal properties were violated.
+
+@!@!@ENDMSG 2116 @!@!@
+@!@!@STARTMSG 2264:1 @!@!@
+The following behavior constitutes a counter-example:
+
+@!@!@ENDMSG 2264 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ decision = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ counter = {}
+/\ pc = <<"LOOOP", "LOOOP", "LOOOP", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 2, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<0, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1]}
+/\ pc = <<"WAIT", "LOOOP", "LOOOP", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 2, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<0, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <WAIT line 132, col 15 to line 137, col 63 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1]}
+/\ pc = <<"CONVI", "LOOOP", "LOOOP", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 2, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<0, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, TRUE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1], [color |-> 1, node |-> 3]}
+/\ pc = <<"CONVI", "LOOOP", "WAIT", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<FALSE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<0, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <CONVI line 139, col 16 to line 159, col 63 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, TRUE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1], [color |-> 1, node |-> 3]}
+/\ pc = <<"LOOOP", "LOOOP", "WAIT", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+6: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, TRUE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1], [color |-> 1, node |-> 3]}
+/\ pc = <<"WAIT", "LOOOP", "WAIT", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+7: <WAIT line 132, col 15 to line 137, col 63 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, TRUE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1], [color |-> 1, node |-> 3]}
+/\ pc = <<"WAIT", "LOOOP", "LOOOP", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+8: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, FALSE, TRUE, FALSE, FALSE>>
+/\ counter = {[color |-> 1, node |-> 1], [color |-> 1, node |-> 3]}
+/\ pc = <<"WAIT", "LOOOP", "Done", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+9: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, FALSE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3] }
+/\ pc = <<"WAIT", "WAIT", "Done", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+10: <WAIT line 132, col 15 to line 137, col 63 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, FALSE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3] }
+/\ pc = <<"WAIT", "LOOOP", "Done", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 2>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+11: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"WAIT", "LOOOP", "Done", "LOOOP", "WAIT">>
+/\ colors = <<1, 1, 1, 2, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+12: <WAIT line 132, col 15 to line 137, col 63 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"WAIT", "LOOOP", "Done", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+13: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"WAIT", "Done", "Done", "LOOOP", "LOOOP">>
+/\ colors = <<1, 1, 1, 2, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+14: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"WAIT", "Done", "Done", "LOOOP", "Done">>
+/\ colors = <<1, 1, 1, 2, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+15: <WAIT line 132, col 15 to line 137, col 63 of module snowflake_atomic>
+/\ decision = <<FALSE, TRUE, TRUE, FALSE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"CONVI", "Done", "Done", "LOOOP", "Done">>
+/\ colors = <<1, 1, 1, 2, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<2, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<1, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+16: <CONVI line 139, col 16 to line 159, col 63 of module snowflake_atomic>
+/\ decision = <<TRUE, TRUE, TRUE, FALSE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"LOOOP", "Done", "Done", "LOOOP", "Done">>
+/\ colors = <<1, 1, 1, 2, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<1, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<2, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+17: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<TRUE, TRUE, TRUE, TRUE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 4],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"LOOOP", "Done", "Done", "WAIT", "Done">>
+/\ colors = <<1, 1, 1, 1, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<1, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<2, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+18: <WAIT line 132, col 15 to line 137, col 63 of module snowflake_atomic>
+/\ decision = <<TRUE, TRUE, TRUE, TRUE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 4],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"LOOOP", "Done", "Done", "LOOOP", "Done">>
+/\ colors = <<1, 1, 1, 1, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<1, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<2, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+19: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<TRUE, TRUE, TRUE, TRUE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 4],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"LOOOP", "Done", "Done", "Done", "Done">>
+/\ colors = <<1, 1, 1, 1, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<1, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<2, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+20: <LOOOP line 114, col 16 to line 130, col 44 of module snowflake_atomic>
+/\ decision = <<TRUE, TRUE, TRUE, TRUE, TRUE>>
+/\ counter = { [color |-> 1, node |-> 1],
+  [color |-> 1, node |-> 2],
+  [color |-> 1, node |-> 3],
+  [color |-> 1, node |-> 4],
+  [color |-> 1, node |-> 5] }
+/\ pc = <<"Done", "Done", "Done", "Done", "Done">>
+/\ colors = <<1, 1, 1, 1, 1>>
+/\ query = {}
+/\ count = <<1, 1, 1, 1, 1>>
+/\ decided = <<1, 2, 2, 2, 2>>
+/\ majority = <<TRUE, FALSE, FALSE, FALSE, FALSE>>
+/\ rounds = <<1, 1, 1, 1, 1>>
+/\ conviction = <<2, 0, 0, 0, 0>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2218:4 @!@!@
+21: Stuttering
+@!@!@ENDMSG 2218 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 00s at 2020-05-22 01:02:10
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2020-05-22 01:02:10
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 101, col 1 to line 101, col 4 of module snowflake_atomic>: 2:2
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 102, col 9 to line 112, col 46 of module snowflake_atomic: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<LOOOP line 114, col 1 to line 114, col 11 of module snowflake_atomic>: 1472:5662
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 114, col 19 to line 114, col 36 of module snowflake_atomic: 17246
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 114, col 19 to line 114, col 26 of module snowflake_atomic: 11584
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 115, col 22 to line 115, col 42 of module snowflake_atomic: 5662
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 116, col 33 to line 116, col 48 of module snowflake_atomic: 3093
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 117, col 41 to line 117, col 111 of module snowflake_atomic: 1352
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 118, col 44 to line 118, col 51 of module snowflake_atomic: 1352
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 119, col 49 to line 119, col 95 of module snowflake_atomic: 579
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 120, col 52 to line 120, col 55 of module snowflake_atomic: 773
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 121, col 52 to line 121, col 69 of module snowflake_atomic: 773
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 122, col 41 to line 122, col 56 of module snowflake_atomic: 1352
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 123, col 38 to line 125, col 84 of module snowflake_atomic: 1741
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 126, col 30 to line 126, col 63 of module snowflake_atomic: 3093
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 127, col 30 to line 127, col 63 of module snowflake_atomic: 2569
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 128, col 30 to line 128, col 70 of module snowflake_atomic: 2569
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 129, col 19 to line 130, col 44 of module snowflake_atomic: 5662
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WAIT line 132, col 1 to line 132, col 10 of module snowflake_atomic>: 816:2839
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 132, col 18 to line 132, col 34 of module snowflake_atomic: 14412
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 132, col 18 to line 132, col 25 of module snowflake_atomic: 11573
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 133, col 21 to line 133, col 28 of module snowflake_atomic: 2839
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 134, col 26 to line 134, col 63 of module snowflake_atomic: 525
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 135, col 26 to line 135, col 63 of module snowflake_atomic: 2314
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 136, col 18 to line 137, col 63 of module snowflake_atomic: 2839
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<CONVI line 139, col 1 to line 139, col 11 of module snowflake_atomic>: 10:514
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 139, col 19 to line 139, col 36 of module snowflake_atomic: 12081
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 139, col 19 to line 139, col 26 of module snowflake_atomic: 11567
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 141, col 24 to line 141, col 62 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 141, col 24 to line 141, col 51 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 141, col 36 to line 141, col 50 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 92, col 20 to line 92, col 53 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 92, col 39 to line 92, col 52 of module snowflake_atomic: 2054
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 92, col 30 to line 92, col 36 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 141, col 49 to line 141, col 49 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 141, col 58 to line 141, col 62 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 142, col 32 to line 142, col 75 of module snowflake_atomic: 512
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 143, col 35 to line 143, col 50 of module snowflake_atomic: 512
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 144, col 43 to line 144, col 79 of module snowflake_atomic: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 145, col 43 to line 145, col 87 of module snowflake_atomic: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 146, col 43 to line 146, col 75 of module snowflake_atomic: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 147, col 43 to line 147, col 106 of module snowflake_atomic: 512
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 148, col 46 to line 148, col 72 of module snowflake_atomic: 512
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 149, col 51 to line 150, col 97 of module snowflake_atomic: 256
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 151, col 54 to line 151, col 57 of module snowflake_atomic: 256
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 152, col 54 to line 153, col 77 of module snowflake_atomic: 256
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 43 to line 154, col 58 of module snowflake_atomic: 512
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 155, col 32 to line 155, col 35 of module snowflake_atomic: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 156, col 32 to line 157, col 67 of module snowflake_atomic: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  line 140, col 28 to line 140, col 30 of module snowflake_atomic: 514:1028
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 158, col 19 to line 158, col 53 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 159, col 19 to line 159, col 63 of module snowflake_atomic: 514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Terminating line 164, col 1 to line 164, col 11 of module snowflake_atomic>: 0:1
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 164, col 40 to line 164, col 56 of module snowflake_atomic: 2651
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 164, col 40 to line 164, col 47 of module snowflake_atomic: 2646
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 164, col 31 to line 164, col 37 of module snowflake_atomic: 2307
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 165, col 19 to line 165, col 32 of module snowflake_atomic: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<Agreement line 176, col 1 to line 176, col 9 of module snowflake_atomic>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 176, col 14 to line 176, col 90 of module snowflake_atomic: 2299
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 176, col 32 to line 176, col 90 of module snowflake_atomic: 57475
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 176, col 32 to line 176, col 63 of module snowflake_atomic: 57475
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 176, col 32 to line 176, col 45 of module snowflake_atomic: 57475
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 176, col 50 to line 176, col 63 of module snowflake_atomic: 2550
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 176, col 68 to line 176, col 90 of module snowflake_atomic: 510
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 176, col 25 to line 176, col 29 of module snowflake_atomic: 2299
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(20) at 2020-05-22 01:02:10: 8,938 states generated (284,800 s/min), 2,299 distinct states found (73,255 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+8938 states generated, 2299 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 1887ms at (2020-05-22 01:02:10)
+@!@!@ENDMSG 2186 @!@!@

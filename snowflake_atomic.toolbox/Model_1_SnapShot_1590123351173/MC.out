@@ -1,0 +1,56 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.14 of 10 July 2019
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 6 and seed -5492376724220722099 with 6 workers on 12 cores with 1200MB heap and 2699MB offheap memory [pid: 7828] (Windows 10 10.0 amd64, AdoptOpenJDK 11.0.3 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file D:\TLA+\toolbox\snowflake_atomic\snowflake_atomic.toolbox\Model_1\MC.tla
+Parsing file D:\TLA+\toolbox\snowflake_atomic\snowflake_atomic.toolbox\Model_1\snowflake_atomic.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\TLC.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\Sequences.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\Integers.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\Naturals.tla
+Parsing file D:\TLA+\toolbox\plugins\org.lamport.tlatools_1.0.0.201907102009\tla2sany\StandardModules\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module Integers
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module snowflake_atomic
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2020-05-22 00:53:58)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 1 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2020-05-22 00:53:58.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking temporal properties for the current state space with 41804 total distinct states at (2020-05-22 00:54:01)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 00s at 2020-05-22 00:54:02
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(21) at 2020-05-22 00:54:02: 165,222 states generated (165,222 s/min), 41,804 distinct states found (41,804 ds/min), 8,359 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking temporal properties for the current state space with 1233516 total distinct states at (2020-05-22 00:55:02)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 34s at 2020-05-22 00:55:37
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(44) at 2020-05-22 00:55:37: 5,479,065 states generated (5,313,843 s/min), 1,233,516 distinct states found (1,191,712 ds/min), 129,066 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
