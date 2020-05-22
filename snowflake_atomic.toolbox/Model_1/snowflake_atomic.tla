@@ -8,7 +8,7 @@ Colors == {0, 1}
 
 (*
 --algorithm atomic{
-    variable colors = <<1, 1, 2, 2, 2>>, counter = {}, query = {};
+    variable colors = <<1, 0, 2, 2, 2>>, counter = {}, query = {};
     
     define{
         RoundMsg(round) == {resp \in counter: resp.myrounds = round}
@@ -38,7 +38,7 @@ Colors == {0, 1}
                 decision := TRUE;
             };
      WAIT:  if(self = 1){
-    CONVI:      with(c \in {1}){
+    CONV0:      with(c \in {0}){
                     if(Cardinality(ColorCounter(c)) \geq Alpha){
                         majority := TRUE;
                         if(c # colors[self]){
@@ -55,31 +55,25 @@ Colors == {0, 1}
                     }
                 };
             };
-           };
-            
-\*    CONVI:  if(Cardinality(ColorCounter(0, rounds)) \geq Alpha){
-\*                majority := TRUE;
-\*                if(colors[self] # 0){
-\*                    colors[self] := 0;
-\*                    conviction := conviction + 1;
-\*                };
-\*            }
-\*            else if(Cardinality(ColorCounter(1, rounds)) \geq Alpha){
-\*                majority := TRUE;
-\*                if(colors[self] # 0){
-\*                    colors[self] := 0;
-\*                    conviction := conviction + 1;
-\*                };
-\*            }
-\*            else {
-\*                conviction := conviction + 1;
-\*                if(conviction \geq Beta){
-\*                    decision := TRUE
-\*                }
-\*            };
-\*    ROUND:  rounds := rounds + 1; 
-\*           };          
-\*    FINAL: decided := colors[self];
+           
+    CONV1:      with(c \in {1}){
+                    if(Cardinality(ColorCounter(c)) \geq Alpha){
+                        majority := TRUE;
+                        if(c # colors[self]){
+                            colors[self] := c;
+                            conviction := 1;
+                        }
+                        else{
+                            conviction := conviction + 1;
+                            if(conviction \geq Beta){
+                                decided := colors[self];
+                                decision := TRUE;
+                            }
+                        }
+                    }
+                };
+            };
+          };  
           }
     }
 }
@@ -99,7 +93,7 @@ vars == << colors, counter, query, pc, rounds, count, decided, decision,
 ProcSet == (Nodes)
 
 Init == (* Global variables *)
-        /\ colors = <<1, 1, 2, 2, 2>>
+        /\ colors = <<1, 0, 2, 2, 2>>
         /\ counter = {}
         /\ query = {}
         (* Process n *)
@@ -131,12 +125,34 @@ LOOOP(self) == /\ pc[self] = "LOOOP"
 
 WAIT(self) == /\ pc[self] = "WAIT"
               /\ IF self = 1
-                    THEN /\ pc' = [pc EXCEPT ![self] = "CONVI"]
-                    ELSE /\ pc' = [pc EXCEPT ![self] = "LOOOP"]
+                    THEN /\ pc' = [pc EXCEPT ![self] = "CONV0"]
+                    ELSE /\ pc' = [pc EXCEPT ![self] = "CONV1"]
               /\ UNCHANGED << colors, counter, query, rounds, count, decided, 
                               decision, majority, conviction >>
 
-CONVI(self) == /\ pc[self] = "CONVI"
+CONV0(self) == /\ pc[self] = "CONV0"
+               /\ \E c \in {0}:
+                    IF Cardinality(ColorCounter(c)) \geq Alpha
+                       THEN /\ majority' = [majority EXCEPT ![self] = TRUE]
+                            /\ IF c # colors[self]
+                                  THEN /\ colors' = [colors EXCEPT ![self] = c]
+                                       /\ conviction' = [conviction EXCEPT ![self] = 1]
+                                       /\ UNCHANGED << decided, decision >>
+                                  ELSE /\ conviction' = [conviction EXCEPT ![self] = conviction[self] + 1]
+                                       /\ IF conviction'[self] \geq Beta
+                                             THEN /\ decided' = [decided EXCEPT ![self] = colors[self]]
+                                                  /\ decision' = [decision EXCEPT ![self] = TRUE]
+                                             ELSE /\ TRUE
+                                                  /\ UNCHANGED << decided, 
+                                                                  decision >>
+                                       /\ UNCHANGED colors
+                       ELSE /\ TRUE
+                            /\ UNCHANGED << colors, decided, decision, 
+                                            majority, conviction >>
+               /\ pc' = [pc EXCEPT ![self] = "CONV1"]
+               /\ UNCHANGED << counter, query, rounds, count >>
+
+CONV1(self) == /\ pc[self] = "CONV1"
                /\ \E c \in {1}:
                     IF Cardinality(ColorCounter(c)) \geq Alpha
                        THEN /\ majority' = [majority EXCEPT ![self] = TRUE]
@@ -158,7 +174,7 @@ CONVI(self) == /\ pc[self] = "CONVI"
                /\ pc' = [pc EXCEPT ![self] = "LOOOP"]
                /\ UNCHANGED << counter, query, rounds, count >>
 
-n(self) == LOOOP(self) \/ WAIT(self) \/ CONVI(self)
+n(self) == LOOOP(self) \/ WAIT(self) \/ CONV0(self) \/ CONV1(self)
 
 (* Allow infinite stuttering to prevent deadlock on termination. *)
 Terminating == /\ \A self \in ProcSet: pc[self] = "Done"
@@ -178,5 +194,5 @@ Progress == <>(decided[1] # 2)
 
 =============================================================================
 \* Modification History
-\* Last modified Fri May 22 01:03:20 EDT 2020 by yashf
+\* Last modified Fri May 22 01:17:20 EDT 2020 by yashf
 \* Created Thu May 21 21:20:16 EDT 2020 by yashf

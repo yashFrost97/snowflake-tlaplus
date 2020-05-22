@@ -55,7 +55,7 @@ Colors == {0, 1}
                     }
                 };
             };
-           
+           };
     CONV1:      with(c \in {1}){
                     if(Cardinality(ColorCounter(c)) \geq Alpha){
                         majority := TRUE;
@@ -73,7 +73,7 @@ Colors == {0, 1}
                     }
                 };
             };
-          };  
+            
           }
     }
 }
@@ -118,7 +118,7 @@ LOOOP(self) == /\ pc[self] = "LOOOP"
                                      /\ counter' = (counter \union {[node |-> self, color |-> (colors'[self])]})
                                      /\ decision' = [decision EXCEPT ![self] = TRUE]
                           /\ pc' = [pc EXCEPT ![self] = "WAIT"]
-                     ELSE /\ pc' = [pc EXCEPT ![self] = "Done"]
+                     ELSE /\ pc' = [pc EXCEPT ![self] = "CONV1"]
                           /\ UNCHANGED << colors, counter, decision >>
                /\ UNCHANGED << query, rounds, count, decided, majority, 
                                conviction >>
@@ -126,7 +126,7 @@ LOOOP(self) == /\ pc[self] = "LOOOP"
 WAIT(self) == /\ pc[self] = "WAIT"
               /\ IF self = 1
                     THEN /\ pc' = [pc EXCEPT ![self] = "CONV0"]
-                    ELSE /\ pc' = [pc EXCEPT ![self] = "CONV1"]
+                    ELSE /\ pc' = [pc EXCEPT ![self] = "LOOOP"]
               /\ UNCHANGED << colors, counter, query, rounds, count, decided, 
                               decision, majority, conviction >>
 
@@ -149,7 +149,7 @@ CONV0(self) == /\ pc[self] = "CONV0"
                        ELSE /\ TRUE
                             /\ UNCHANGED << colors, decided, decision, 
                                             majority, conviction >>
-               /\ pc' = [pc EXCEPT ![self] = "CONV1"]
+               /\ pc' = [pc EXCEPT ![self] = "LOOOP"]
                /\ UNCHANGED << counter, query, rounds, count >>
 
 CONV1(self) == /\ pc[self] = "CONV1"
@@ -171,7 +171,7 @@ CONV1(self) == /\ pc[self] = "CONV1"
                        ELSE /\ TRUE
                             /\ UNCHANGED << colors, decided, decision, 
                                             majority, conviction >>
-               /\ pc' = [pc EXCEPT ![self] = "LOOOP"]
+               /\ pc' = [pc EXCEPT ![self] = "Done"]
                /\ UNCHANGED << counter, query, rounds, count >>
 
 n(self) == LOOOP(self) \/ WAIT(self) \/ CONV0(self) \/ CONV1(self)
@@ -194,5 +194,5 @@ Progress == <>(decided[1] # 2)
 
 =============================================================================
 \* Modification History
-\* Last modified Fri May 22 01:17:20 EDT 2020 by yashf
+\* Last modified Fri May 22 01:16:22 EDT 2020 by yashf
 \* Created Thu May 21 21:20:16 EDT 2020 by yashf
